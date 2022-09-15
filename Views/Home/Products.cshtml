@@ -1,0 +1,31 @@
+@model Product
+<h1 class="d-flex justify-content-center mb-5">Products | <a href="Categories">Categories</a> </h1>
+<div class="row">
+<div class="col-sm-6">
+    <h3> New Product </h3>
+    <form action="NewProduct" method="post">
+        <div class = "form-row">
+        <label asp-for="Name">Name</label>
+        <input class = "form-control"  asp-for="Name">
+        </div>
+        <div class = "form-row">
+        <label asp-for="Description">Description</label>
+        <input  class = "form-control" asp-for="Description">
+        </div>
+        <div class = "form-row">
+        <label asp-for="Price">Price</label>
+        <input class = "form-control"  asp-for="Price">
+        </div>
+        <div class = "form-row">
+        <input class = "btn1"  type="submit" value="Create">
+        </div>
+    </form>
+</div>
+<div class="col-sm-6">
+    <h1>Existing Products</h1>
+    @foreach (var Product in ViewBag.AllProducts)
+    {
+        <a href="Product/@Product.ProductId" class="row">@Product.Name</a>
+    }
+</div>
+</div>

@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkcyan;
+}
+.row{
+    background-color: #29E5FF;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey;
+}
+.mynav{
+    background-color: #29E5FF;
+}
+img{
+    border-top-left-radius:30px ;
+    border-bottom-left-radius: 30px;
+    margin-left: -10px;
+}
+.btn1{
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+}
+.btn1:hover{
+    background-color: white;
+    border: 0.5px solid darkcyan;
+    color: black;
+}

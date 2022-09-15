@@ -1,0 +1,27 @@
+<h1 class="d-flex justify-content-center mb-5">@ViewBag.ThisProduct.Name</h1>
+@model SubmitCategory
+
+<div class="row">
+    <div class="col-sm-6">
+        <h1>Categories</h1>
+        @foreach (var item in ViewBag.ThisProduct.Associations)
+        {
+            <h1>@item.Category.Name</h1>
+        }
+    </div>
+    <div class="col-sm-6">
+        <h1>Add Category</h1>
+        <form action="AddCategory/@ViewBag.ThisProduct.ProductId" method="post">
+            <select asp-for="CategoryId">
+            @foreach (var Category in ViewBag.SelectCategories)
+            {
+                
+                <option value="@Category.CategoryId"> @Category.CategoryId @Category.Name</option>
+                
+            }
+            </select>
+            <input type="submit" value="Add Category">
+            
+        </form>
+    </div>
+</div>

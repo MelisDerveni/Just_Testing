@@ -1,0 +1,15 @@
+@namespace Just_Testing.Models
+<div class="row">
+    <div class="col-sm-6">
+<h1>Welcome to CRUDelicious</h1>
+
+
+@foreach(var item in ViewBag.Mydishes){
+    <h4><a href="DisplayDish/@item.DishId">@item.Name</a> by @item.Chef</h4>
+    
+}
+    </div>
+    <div class="col-sm-3">
+        <a href="New" class="form-control my-3 p-2 mt-3 mb-5"> Add Dish</a>
+    </div>
+</div>

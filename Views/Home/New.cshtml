@@ -1,0 +1,46 @@
+@model Dish
+<div class = "row">
+<h1>Add new dish</h1>
+
+<form asp-action="Added" asp-controller="Home"  method="post">
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="text" placeholder="Chef's Name :" class="form-control my-3 p-2" name="Name">
+            <span asp-validation-for ="Name"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="text" placeholder="Name of Dish:" class="form-control my-3 p-2" name="Chef">
+            <span asp-validation-for ="Chef"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="number" placeholder="Enter Calories:" class="form-control my-3 p-2" name="Calories">
+            <span asp-validation-for ="Calories"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="Number" placeholder="How tasty is it?" class="form-control my-3 p-2" name="Tastiness">
+            <span asp-validation-for ="Tastiness"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="text" placeholder="Description:" class="form-control my-3 p-2" name="Description">
+            <span asp-validation-for ="Description"></span>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="col-lg-3">
+            <input type="submit" value="Add Dish" class="form-control my-3 p-2 btn1 mt-3 mb-5">
+        </div>
+    </div>
+</form>
+
+<a href="CRUDelicious"> Go Back</a>
+
+</div>

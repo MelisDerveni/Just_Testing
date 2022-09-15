@@ -1,0 +1,24 @@
+<h1 class="d-flex justify-content-center mb-5"> <a href="Products">Products</a> | Categories</h1>
+@model Category
+
+<div class="row">
+<div class="col-sm-6">
+    <h3> New Product </h3>
+    <form action="NewCategory" method="post">
+        <div class = "form-row">
+        <label asp-for="Name">Name</label>
+        <input class = "form-control"  asp-for="Name">
+        </div>
+        <div class = "form-row">
+        <input class = "btn1"  type="submit" value="Create">
+        </div>
+    </form>
+</div>
+<div class="col-sm-6">
+    <h1>Existing Categories</h1>
+    @foreach (var Category in ViewBag.AllCategories)
+    {
+        <a href="Category/@Category.CategoryId" class="row">@Category.Name</a>
+    }
+</div>
+</div>

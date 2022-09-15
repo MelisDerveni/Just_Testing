@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model LoginUser
+
+<section class = "Form my-4 mx-5">
+    <div class = 'container'>
+        <div class = "row no-gutters">
+            <div class = "col-lg-5 ">
+                <img src="https://thumbs.dreamstime.com/b/cartoon-ninja-holding-japanese-sword-vector-image-katana-drawn-style-vector-very-good-design-need-34692186.jpg" alt="ninja here" class ="img-fluid">
+            </div>
+            <div class = "col-lg-7 px-5 pt-5">
+                <h1 class="font-weight-bold py-3">Welcome</h1>
+                <h4>Sign in to your account</h4>
+                <form action="Login2" method="post">
+                    <div class = "form-row">
+                        <div class= "col-lg-7">
+                            <input asp-for="Email" class="form-control my-3 p-2">
+                            <span asp-validation-for ="Email"></span>
+                        </div>
+                    </div>
+                    <div class = "form-row">
+                        <div class= "col-lg-7">
+                            <input asp-for="Password" class="form-control my-3 p-2">
+                            <span asp-validation-for ="Password"></span>
+                        </div>
+                    </div>
+                    <div class = "form-row">
+                        <div class= "col-lg-7">
+                            <input type="submit" value="Login" class="form-control my-3 p-2 btn1 mt-3 mb-5">
+                        </div>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                    <p>Don't have an account?<a href="Register">Register here</a></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>

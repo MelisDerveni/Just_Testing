@@ -1,0 +1,56 @@
+
+<h1>Welcome  <a href="/Logout">Log Out</a> </h1>
+<h3>@ViewBag.Iloguari.username</h3>
+
+
+
+
+
+<div class="col-sm-6">
+    <p>All Users</p>
+<table class="table ">
+<tr>
+    <th>Name</th>
+    <th>Action</th>
+
+</tr>
+    @foreach (var item in ViewBag.Allusers)
+{
+    <tr>
+    <td>@item.username</td>
+    <td><a href="Request/@item.id">Send friend request</a></td>
+    </tr>
+}
+</table>
+</div>
+<div class="col-sm-6" >
+    <p>All friend Requests</p>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Action</th>
+</tr>
+<tr>
+    @foreach (var item in ViewBag.Names)
+    {
+        <tr>
+        <td>@item.username</td>
+        <td><a href="Accept/@item.id"> Accept</a> | <a href="Remove/@item.id">Delete</a></td>
+        </tr>
+    }
+    <table>
+
+</tr>
+
+</table>
+
+</div>
+<div class="col-sm-6">
+
+
+</div>
+@foreach (var item in ViewBag.Myfrineds)
+{
+    <p>@item.RequestId</p>
+}
