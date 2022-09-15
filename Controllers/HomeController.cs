@@ -172,7 +172,15 @@ public class HomeController : Controller
                 var shto = _context.Users.First(c=>c.id == CurrentReq.SenderId);
                 ViewBag.Names.Add(shto);
             }
+            
+            
+            
+            
 
+            // Many to many with the same model method #2
+            ViewBag.TestFriends = _context.Requests.Include(c=>c.Reciver).Include(c=>c.Sender).Where((c=>(c.ReciverId == HttpContext.Session.GetInt32("id")) || (c.SenderId == HttpContext.Session.GetInt32("id")))).Where(c=>c.Accepted == true).ToList();
+            ViewBag.TestOthers = _context.Users.Include(c=>c.RequestsSent).Include(c=>c.RequestsReciverd).Where(e=>e.RequestsSent.Any(c=>(c.ReciverId == HttpContext.Session.GetInt32("id") && (c.SenderId == HttpContext.Session.GetInt32("id")) == false))).ToList();
+            ViewBag.Test = _context.Requests.Include(c=>c.Sender).Include(c=>c.Reciver).Where(c=>c.ReciverId == HttpContext.Session.GetInt32("id")).ToList();
             return View();
         }
 

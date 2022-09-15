@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Just_Testing.Migrations
 {
-    public partial class first : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -185,6 +185,12 @@ namespace Just_Testing.Migrations
                         principalTable: "Users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Requests_Users_SenderId",
+                        column: x => x.SenderId,
+                        principalTable: "Users",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -207,6 +213,11 @@ namespace Just_Testing.Migrations
                 name: "IX_Requests_ReciverId",
                 table: "Requests",
                 column: "ReciverId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Requests_SenderId",
+                table: "Requests",
+                column: "SenderId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

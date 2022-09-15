@@ -54,3 +54,14 @@
 {
     <p>@item.RequestId</p>
 }
+
+<h3>Test Prove Per Query me many to many ne te njejten tabele</h3>
+@foreach (var item in ViewBag.Test)
+{
+    <p>@item.RequestId</p>
+}
+<h3>Friends</h3>
+@foreach (var item in ViewBag.TestFriends)
+{
+    <p> Ne database Id e Shokut eshte: @item.RequestId (Nga ketu mund te marrim emrin e shokut apo te dhena te tjera)</p>
+}

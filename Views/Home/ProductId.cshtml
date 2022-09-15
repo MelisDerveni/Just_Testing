@@ -11,12 +11,14 @@
     </div>
     <div class="col-sm-6">
         <h1>Add Category</h1>
+        <p>Kujdes: Nese tenton te shtosh kategori kur produkti i perket te gjitha kategorive te jep error. Krijoni disa kategori pastaj shtoini ato.</p>
         <form action="AddCategory/@ViewBag.ThisProduct.ProductId" method="post">
             <select asp-for="CategoryId">
             @foreach (var Category in ViewBag.SelectCategories)
             {
                 
                 <option value="@Category.CategoryId"> @Category.CategoryId @Category.Name</option>
+                
                 
             }
             </select>

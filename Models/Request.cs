@@ -7,11 +7,11 @@ public class Request
     [Key]
     public int RequestId {get;set;}
     public int SenderId {get;set;}
-    
+    public user? Sender {get;set;}    
     
     public int ReciverId {get;set;}
     public user? Reciver{get;set;}
-    // public user? Reciver{get;set;}
+    
     
     public bool Accepted{get;set;}
     

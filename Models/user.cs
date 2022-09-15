@@ -17,8 +17,11 @@ public class user {
     [MinLength(8, ErrorMessage="Password must be 8 characters or longer!")]
     public string password {get; set;}
 
-
-    public List<Request> Requests {get;set;} = new List<Request>();
+    [InverseProperty("Sender")]
+    public List<Request> RequestsSent {get;set;} = new List<Request>();
+    
+    [InverseProperty("Reciver")]
+    public List<Request> RequestsReciverd {get;set;} = new List<Request>();
 
 
     [NotMapped]
